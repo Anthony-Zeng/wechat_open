@@ -1,5 +1,6 @@
 # @author anthony
 # @date  2023/7/28
+require 'wechat_open/token/base'
 module WechatOpen
   module Token
     class ComponentToken < Base
