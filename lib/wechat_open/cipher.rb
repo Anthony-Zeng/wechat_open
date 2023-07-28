@@ -1,6 +1,6 @@
 # @author anthony
 # @date  2023/7/28
-require 'open_ssl/cipher'
+require 'openssl/cipher'
 require 'base64'
 module WechatOpen
   module Cipher
