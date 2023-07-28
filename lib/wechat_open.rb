@@ -12,7 +12,8 @@ require_relative 'wechat_open/api/authorizer'
 
 module WechatOpen
 
-  API_ENDPOINT = 'https://api.weixin.qq.com/cgi-bin/'
+  API_ENDPOINT = 'https://api.weixin.qq.com/cgi-bin/'.freeze
+  APP_AUTHORIZE_ENDPOINT = 'https://mp.weixin.qq.com/cgi-bin/componentloginpage'.freeze
 
   HTTP_OK_STATUS          = [200, 201].freeze
   SUCCESS_CODE            = 0
@@ -25,7 +26,7 @@ module WechatOpen
 
     def initialize(code, msg = '')
       @error_code = code
-      super "(#{error_code}) #{msg}"
+      super "(#{code}) #{msg}"
     end
   end
 end

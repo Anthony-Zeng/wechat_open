@@ -106,7 +106,7 @@ module WechatOpen
     end
 
     def success?
-      errcode == SUCCESS_CODE
+      errcode.nil? || errcode == SUCCESS_CODE
     end
   end
 

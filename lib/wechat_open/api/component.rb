@@ -5,6 +5,9 @@ module WechatOpen
   module Api
     class Component < Base
 
+      include WechatOpen::Cipher
+      include Methods::Component
+
       attr_reader :encoding_aes_key, :component_appid, :component_appsecret, :component_token, :token
 
       def initialize(options = {})
@@ -38,7 +41,7 @@ module WechatOpen
       end
 
       def token_store
-        @token ||= Token::ComponentToken.new(self)
+        @token_store ||= Token::ComponentToken.new(self)
       end
 
     end
