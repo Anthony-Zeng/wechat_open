@@ -6,6 +6,10 @@ module WechatOpen
   module Api
     class Base
 
+      def initialize(options = {})
+
+      end
+
 
       def request
         @request ||= WechatOpen::Request.new(API_ENDPOINT, false)
