@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 require 'redis'
 require 'active_support/all'
-LIB_PATH = "#{File.dirname(__FILE__)}/wechat_open"
-Dir["#{LIB_PATH}/api/methods/*.rb", "#{LIB_PATH}/token/*.rb"].each { |path| require path }
+WECHAT_OPEN__LIB_PATH = "#{File.dirname(__FILE__)}/wechat_open"
+Dir["#{WECHAT_OPEN__LIB_PATH}/api/methods/*.rb", "#{WECHAT_OPEN__LIB_PATH}/token/*.rb"].each { |path| require path }
 require_relative "wechat_open/version"
 require_relative 'wechat_open/config'
+require_relative 'wechat_open/cipher'
+require_relative 'wechat_open/api/base'
+require_relative 'wechat_open/api/component'
+require_relative 'wechat_open/api/authorizer'
 
 module WechatOpen
 
