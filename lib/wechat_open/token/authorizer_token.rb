@@ -14,7 +14,7 @@ module WechatOpen
       end
 
       def refresh_token
-        client.component.api_authorizer_token(client.component.component_appid, client.authorizer_appid, client.authorizer_refresh_token)
+        client.component.api_authorizer_token(client.authorizer_appid, client.authorizer_refresh_token)
       end
 
     end
