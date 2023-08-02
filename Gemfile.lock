@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wechat_open (0.1.0)
+    wechat_open (0.1.2.beta)
       activesupport (>= 6.0)
       builder (>= 3.2)
       http (>= 2.2)

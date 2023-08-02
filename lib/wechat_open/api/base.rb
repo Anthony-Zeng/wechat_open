@@ -15,11 +15,6 @@ module WechatOpen
         @request ||= WechatOpen::Request.new(API_ENDPOINT, false)
       end
 
-      def valid?
-
-      end
-
-
       def get(path, headers = {})
         with_token(headers[:params]) do |params|
           request.get path, headers.merge(params: params)

@@ -6,7 +6,7 @@ module WechatOpen
     class AuthorizerToken < Base
 
       def redis_key
-        @redis_key ||= Digest::MD5.hexdigest "WX_AUTHORIZER_TOKEN_#{client.corp_id}_#{client.secret}"
+        @redis_key ||= Digest::MD5.hexdigest "WX_AUTHORIZER_TOKEN_#{client.authorizer_appid}_#{client.authorizer_refresh_token}"
       end
 
       def token_key
