@@ -4,6 +4,8 @@ module WechatOpen
   module Api
     class Authorizer < Base
 
+      include Methods::Kf
+
       attr_reader :component, :permanent_code, :authorizer_appid, :authorizer_refresh_token
 
       def initialize(options = {})
