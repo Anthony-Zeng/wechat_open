@@ -7,7 +7,6 @@ module WechatOpen
 
       include WechatOpen::Cipher
       include Methods::Component
-      include Methods::Media
 
       attr_reader :encoding_aes_key, :component_appid, :component_appsecret, :component_token, :token
 

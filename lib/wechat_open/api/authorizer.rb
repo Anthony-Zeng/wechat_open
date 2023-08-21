@@ -5,6 +5,7 @@ module WechatOpen
     class Authorizer < Base
 
       include Methods::Kf
+      include Methods::Media
 
       attr_reader :component, :permanent_code, :authorizer_appid, :authorizer_refresh_token
 
