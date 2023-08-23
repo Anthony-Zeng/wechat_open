@@ -40,7 +40,7 @@ module WechatOpen
         end
 
         def video_message_send(touser:, video: {})
-          message_custom_send(touser, 'vodeo', { video: video })
+          message_custom_send(touser, 'video', { video: video })
         end
 
         def music_message_send(touser, music: {})
