@@ -47,8 +47,12 @@ module WechatOpen
           message_custom_send(touser, 'music', { music: music })
         end
 
-        def news_message_send(touser:, news: [] )
-          message_custom_send(touser, 'news', { news: { articles: news  } })
+        def news_message_send(touser:, news: [])
+          message_custom_send(touser, 'news', { news: { articles: news } })
+        end
+
+        def menu_message_send(touser:, msgmenu:)
+          message_custom_send(touser, 'msgmenu', { msgmenu: msgmenu })
         end
 
         private
