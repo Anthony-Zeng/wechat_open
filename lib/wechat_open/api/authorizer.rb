@@ -6,6 +6,7 @@ module WechatOpen
 
       include Methods::Kf
       include Methods::Media
+      include Methods::Template
 
       attr_reader :component, :permanent_code, :authorizer_appid, :authorizer_refresh_token
 
