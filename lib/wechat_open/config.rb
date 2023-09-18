@@ -21,9 +21,16 @@ module WechatOpen
     def expired_shift_seconds
       config.expired_shift_seconds || 100
     end
+
+    def api_base_url
+      return @api_base_url if defined?(@api_base_url)
+
+      @api_base_url = config.api_base_url || API_ENDPOINT
+    end
+
   end
 
   class Config
-    attr_accessor :redis, :http_timeout_options, :expired_shift_seconds
+    attr_accessor :redis, :http_timeout_options, :expired_shift_seconds, :api_base_url
   end
 end

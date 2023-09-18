@@ -40,22 +40,21 @@ module WechatOpen
 
     end
 
-
     private
 
     def request(path, header = {}, &_block)
-      url_base = header.delete(:base) || base
+      url = URI.join(WechatOpen.api_base_url, path)
       as = header.delete(:as)
       header['Accept'] = 'application/json'
       dup_header = header.dup
-      response = yield("#{url_base}#{path}", header)
+      response = yield(url, header)
       raise ResponseError.new(response.status) unless HTTP_OK_STATUS.include?(response.status)
 
       parse_response(response, as || :json) do |parse_as, data|
         break unless parse_as == :json
         result = WechatOpen::Result.new(data)
         if defined?(Rails.logger) && Rails.logger
-          Rails.logger.debug "[微信开放平台] request path #{url_base}#{path};\n request params: #{dup_header.inspect}; \n response: #{result.inspect}"
+          Rails.logger.debug "[微信开放平台] request path #{url};\n request params: #{dup_header.inspect}; \n response: #{result.inspect}"
         end
         raise AccessTokenExpiredError if result.token_expired?
         result
